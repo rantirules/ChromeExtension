@@ -1,4 +1,4 @@
-var API_KEY = 'AIzaSyAPQcpkN4tJL1-B-rKLm1GzqfTW2QypUZg'; // 
+var API_KEY = 'INSERT YOUR API KEY HERE'; // 
 var MAX_LABELS = 4; // Only show the top few labels for an image.
 var LINE_COLOR = '#f3f315';
 
