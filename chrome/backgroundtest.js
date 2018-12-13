@@ -1,7 +1,11 @@
 'use strict';
+console.log("Chrome extension is running again");
+let imgs = document.getElementsByTagName('img');
 
-describe('chrome/background.js', function () {
-  before(function (done) {
+for (imgElt of imgs) {
+  console.log(imgElt.src); // this is going to parsed into the google cloud api
+}
+
     if (API_KEY) {
       return done();
     }
@@ -9,10 +13,10 @@ describe('chrome/background.js', function () {
 
     document.addEventListener('config-loaded', function () {
       assert(API_KEY);
-      done();
+      return done();
     });
   });
-
+// menu options when user right clicks
   it('Should add context menu items', function (done) {
     assert(contextMenus['Text detection']);
     assert(contextMenus['Label detection']);
