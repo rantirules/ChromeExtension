@@ -65,21 +65,6 @@ var notify = function (title, message) {
   });
 };
 
-// Returns true if successful.
-var copyToClipboard = function (text) {
-  var buffer = document.createElement('textarea');
-  document.body.appendChild(buffer);
-  buffer.value = text;
-  buffer.focus();
-  buffer.selectionStart = 0;
-  buffer.selectionEnd = buffer.value.length;
-  if (!document.execCommand('copy')) {
-    console.log("Couldn't copy from buffer");
-    return false;
-  }
-  buffer.remove(); // clean up the buffer node.
-  return true;
-};
 
 chrome.contextMenus.create({
   title: 'Text detection',
