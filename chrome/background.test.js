@@ -5,6 +5,8 @@ describe('chrome/background.js', function () {
     if (API_KEY) {
       return done();
     }
+ // the assert module that I used here is when an expression evaluates to 0 or false, an error is thrown and the programme stops
+
     document.addEventListener('config-loaded', function () {
       assert(API_KEY);
       done();
@@ -39,7 +41,7 @@ describe('chrome/background.js', function () {
 
     contextMenus['Label detection'].onclick({srcUrl: '/base/testing/cat.jpg'});
   });
-
+// evt is a truthy value
   it('Should detect text', function (done) {
     var lookForText = function (evt) {
       assert(evt.id);
